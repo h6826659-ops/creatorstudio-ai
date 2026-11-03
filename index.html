@@ -127,5 +127,5 @@ function updateCounts(){let n=JSON.parse(localStorage.getItem('cs_projects')||'[
 document.getElementById('newProject').onclick=()=>{['topic','keypoints','scriptOutput','sceneInput','voiceInput','voiceOutput','thumbTopic','thumbOutput','seoTopic','seoOutput'].forEach(id=>document.getElementById(id).value='');showPage('script');toast('New blank project ready')};
 updateCounts();
 if('serviceWorker' in navigator && location.protocol!=='file:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
- // Image Generator section will be added here
+ 
 </script></body></html>
