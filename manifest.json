@@ -1,0 +1,10 @@
+{
+  "name": "CreatorStudio AI",
+  "short_name": "CreatorStudio",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0d1020",
+  "theme_color": "#101225",
+  "description": "Free video planning and creator workspace",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

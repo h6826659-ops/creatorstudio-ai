@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101225"><meta name="description" content="CreatorStudio AI - free video planning workspace">
+<link rel="manifest" href="manifest.json"><title>CreatorStudio AI</title>
+<style>
+:root{--bg:#0d1020;--panel:#151a30;--panel2:#1b2240;--line:#293252;--text:#f4f5ff;--muted:#a8b0ce;--purple:#8b7cff;--cyan:#57d6d0;--pink:#f28ab2}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 75% 0,#25204b 0,transparent 34%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,Segoe UI,Arial,sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;background:var(--purple);color:#fff;font-weight:650}button.secondary{background:#252d4c;border:1px solid var(--line)}button.ghost{background:transparent;border:1px solid var(--line);color:var(--muted)}button.danger{background:#71334d}
+.app{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.sidebar{padding:24px 16px;background:#101428;border-right:1px solid var(--line);position:sticky;top:0;height:100vh}.brand{display:flex;gap:10px;align-items:center;font-size:18px;font-weight:800;margin:0 8px 28px}.logo{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--purple),var(--cyan));display:grid;place-items:center;color:#111;font-weight:900}.nav{display:grid;gap:7px}.nav button{background:transparent;color:var(--muted);text-align:left;font-weight:600}.nav button.active,.nav button:hover{background:var(--panel2);color:#fff}.side-note{position:absolute;bottom:18px;left:18px;right:18px;color:var(--muted);font-size:12px}.main{padding:28px;max-width:1500px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:24px}.eyebrow{color:var(--cyan);font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:800}.top h1{margin:4px 0;font-size:28px}.muted{color:var(--muted)}.pill{border:1px solid var(--line);border-radius:99px;padding:6px 10px;color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{background:linear-gradient(160deg,#191f39,#14192d);border:1px solid var(--line);border-radius:17px;padding:18px;min-width:0}.span12{grid-column:span 12}.span8{grid-column:span 8}.span6{grid-column:span 6}.span4{grid-column:span 4}.hero{padding:24px;background:linear-gradient(120deg,#25214d,#172d43);border:1px solid #45416f;border-radius:20px;margin-bottom:18px}.hero h2{font-size:25px;margin:5px 0}.hero p{color:#c4c9e2;max-width:680px;margin:6px 0 16px}.stat{font-size:28px;font-weight:800}.statlabel{font-size:12px;color:var(--muted)}h2,h3{margin-top:0}h3{font-size:16px}.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:13px;color:#c8cde2;font-weight:650}input,textarea,select{width:100%;border-radius:10px;border:1px solid var(--line);background:#0f1428;color:var(--text);padding:11px 12px;outline:none}input:focus,textarea:focus,select:focus{border-color:var(--purple)}textarea{min-height:150px;resize:vertical}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.row>*{flex:1}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.output{white-space:pre-wrap;background:#0d1326;border:1px solid var(--line);padding:14px;border-radius:12px;min-height:90px;color:#e5e9ff;overflow-wrap:anywhere}.hidden{display:none!important}.feature{display:flex;gap:12px;align-items:flex-start}.featureicon{width:38px;height:38px;flex:none;border-radius:12px;background:#29264e;display:grid;place-items:center;font-size:19px}.feature p{margin:4px 0;color:var(--muted);font-size:13px}.scene{border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0;background:#11172b}.scenehead{display:flex;justify-content:space-between;gap:8px;align-items:center}.scene textarea{min-height:95px}.small{font-size:12px;color:var(--muted)}.project{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px;border-bottom:1px solid var(--line)}.toast{position:fixed;bottom:20px;right:20px;background:#25335a;border:1px solid #53608c;padding:12px 16px;border-radius:12px;display:none;z-index:5}.footer{margin-top:22px;color:var(--muted);font-size:12px}
+@media(max-width:850px){.app{grid-template-columns:1fr}.sidebar{height:auto;position:relative;padding:12px}.brand{margin:0 6px 10px}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap;padding:9px}.side-note{display:none}.main{padding:17px}.span8,.span6,.span4{grid-column:span 12}.top h1{font-size:22px}}
+</style></head>
+<body>
+<div class="app">
+<aside class="sidebar">
+ <div class="brand"><div class="logo">C</div><span>CreatorStudio <span style="color:var(--cyan)">AI</span></span></div>
+ <nav class="nav">
+  <button class="active" data-page="home">⌂ &nbsp; Dashboard</button>
+  <button data-page="script">✍ &nbsp; Script Writer</button>
+  <button data-page="scenes">▤ &nbsp; Scene Generator</button>
+  <button data-page="voice">♫ &nbsp; Voiceover Studio</button>
+  <button data-page="thumbnail">▣ &nbsp; Thumbnail Studio</button>
+  <button data-page="seo">⌕ &nbsp; YouTube SEO</button>
+  <button data-page="projects">▣ &nbsp; My Projects</button>
+ </nav>
+ <div class="side-note">Free starter edition · Works offline after first load<br>Projects stay in this browser.</div>
+</aside>
+<main class="main">
+<header class="top"><div><div class="eyebrow">Your creative workspace</div><h1 id="pageTitle">Dashboard</h1><div class="muted" id="pageSub">Plan, write and organize your next video.</div></div><div class="row" style="flex:0 0 auto"><span class="pill">● Free edition</span><button class="secondary" id="newProject">＋ New project</button></div></header>
+
+<section id="home" class="page">
+ <div class="hero"><div class="eyebrow">Create something worth watching</div><h2>Your next video starts here.</h2><p>Turn a topic into a script, split it into scenes, prepare voiceover text and create YouTube metadata — all in one simple workspace.</p><button onclick="showPage('script')">Start creating →</button></div>
+ <div class="grid">
+  <div class="card span4"><div class="stat" id="projectCount">0</div><div class="statlabel">Saved projects</div></div>
+  <div class="card span4"><div class="stat">6</div><div class="statlabel">Creator tools</div></div>
+  <div class="card span4"><div class="stat">2</div><div class="statlabel">Languages supported</div></div>
+  <div class="card span6"><div class="feature"><div class="featureicon">✍</div><div><h3>Write your script</h3><p>Start with a topic, audience, language and video style. Build a usable first draft.</p><button class="secondary" onclick="showPage('script')">Open Script Writer</button></div></div></div>
+  <div class="card span6"><div class="feature"><div class="featureicon">🎬</div><div><h3>Build your storyboard</h3><p>Split the script into scenes and prepare visual prompts for your chosen AI video tool.</p><button class="secondary" onclick="showPage('scenes')">Open Scene Generator</button></div></div></div>
+  <div class="card span12"><h3>Recent projects</h3><div id="recentProjects" class="muted">No projects yet. Click “New project” to begin.</div></div>
+ </div>
+</section>
+
+<section id="script" class="page hidden">
+ <div class="grid"><div class="card span6">
+ <h3>Script brief</h3>
+ <div class="field"><label>Video topic</label><input id="topic" placeholder="e.g. How D-Mart became successful"></div>
+ <div class="row"><div class="field"><label>Language</label><select id="scriptLang"><option>Hindi</option><option>English</option><option>Hinglish</option></select></div><div class="field"><label>Video format</label><select id="format"><option>Documentary</option><option>Explainer</option><option>Motivational</option><option>Facts</option><option>Storytelling</option></select></div></div>
+ <div class="row"><div class="field"><label>Duration</label><select id="duration"><option value="1-2 minutes">1–2 minutes</option><option value="3-5 minutes" selected>3–5 minutes</option><option value="8-10 minutes">8–10 minutes</option><option value="12-15 minutes">12–15 minutes</option></select></div><div class="field"><label>Tone</label><select id="tone"><option>Engaging</option><option>Dramatic</option><option>Simple and educational</option><option>Inspirational</option></select></div></div>
+ <div class="field"><label>Key points (optional)</label><textarea id="keypoints" placeholder="Add facts or points you want included..."></textarea></div>
+ <button id="generateScript">Generate script draft</button> <span class="small">Template-based helper; not a live AI model.</span>
+ </div><div class="card span6"><h3>Your script draft</h3><textarea id="scriptOutput" placeholder="Your generated draft will appear here..."></textarea><div class="actions"><button class="secondary" onclick="copyText('scriptOutput')">Copy script</button><button class="secondary" onclick="downloadText('scriptOutput','video-script.txt')">Download .txt</button><button onclick="saveCurrent()">Save project</button></div></div></div>
+</section>
+
+<section id="scenes" class="page hidden">
+ <div class="card"><h3>Scene Generator</h3><p class="muted">Paste your script. This tool splits it into manageable scenes and creates editable visual prompt starters.</p>
+ <div class="field"><label>Paste script</label><textarea id="sceneInput" placeholder="Paste your complete video script here..."></textarea></div>
+ <div class="row"><div class="field"><label>Visual style</label><select id="visualStyle"><option>Realistic documentary</option><option>Cinematic realistic</option><option>Minimal 2D animation</option><option>3D animated</option><option>News reportage</option></select></div><div class="field"><label>Aspect ratio</label><select id="aspect"><option>16:9 landscape</option><option>9:16 vertical</option><option>1:1 square</option></select></div></div>
+ <button id="makeScenes">Create scene prompts</button></div>
+ <div id="sceneResults" class="card hidden" style="margin-top:16px"><div class="row"><h3 style="margin:0">Storyboard</h3><button class="secondary" onclick="downloadScenes()">Download storyboard</button></div><div id="sceneList"></div></div>
+</section>
+
+<section id="voice" class="page hidden">
+ <div class="grid"><div class="card span6"><h3>Voiceover preparation</h3><p class="muted">Prepare clean narration text for a text-to-speech service or your own recording.</p>
+ <div class="field"><label>Paste script</label><textarea id="voiceInput" placeholder="Paste narration here..."></textarea></div>
+ <div class="row"><div class="field"><label>Language</label><select id="voiceLang"><option>Hindi</option><option>English</option><option>Hinglish</option></select></div><div class="field"><label>Delivery style</label><select id="delivery"><option>Natural documentary</option><option>Warm storyteller</option><option>Energetic presenter</option><option>Calm educational</option></select></div></div>
+ <button id="cleanVoice">Prepare voiceover text</button></div><div class="card span6"><h3>Recording-ready text</h3><textarea id="voiceOutput" placeholder="Your cleaned narration will appear here..."></textarea><div class="actions"><button class="secondary" onclick="copyText('voiceOutput')">Copy</button><button class="secondary" onclick="downloadText('voiceOutput','voiceover.txt')">Download text</button></div><p class="small">Audio generation is not built into this free offline starter. You can paste this text into a free-tier TTS service.</p></div></div>
+</section>
+
+<section id="thumbnail" class="page hidden">
+ <div class="grid"><div class="card span6"><h3>Thumbnail idea builder</h3>
+ <div class="field"><label>Video topic</label><input id="thumbTopic" placeholder="Enter your video topic"></div>
+ <div class="field"><label>Thumbnail mood</label><select id="thumbMood"><option>Mystery and suspense</option><option>Business documentary</option><option>Motivational</option><option>Shocking facts</option><option>Educational</option></select></div>
+ <div class="field"><label>Text language</label><select id="thumbLang"><option>Hindi</option><option>English</option><option>Hinglish</option></select></div>
+ <button id="makeThumb">Create thumbnail concept</button></div><div class="card span6"><h3>Concept & image prompt</h3><textarea id="thumbOutput" placeholder="Your thumbnail concept will appear here..."></textarea><div class="actions"><button class="secondary" onclick="copyText('thumbOutput')">Copy</button><button class="secondary" onclick="downloadText('thumbOutput','thumbnail-concept.txt')">Download</button></div></div></div>
+</section>
+
+<section id="seo" class="page hidden">
+ <div class="grid"><div class="card span6"><h3>YouTube SEO helper</h3><div class="field"><label>Video topic</label><input id="seoTopic" placeholder="Enter your video topic"></div><div class="field"><label>Channel niche</label><input id="niche" value="Motivation, business and facts"></div><div class="field"><label>Language</label><select id="seoLang"><option>Hindi</option><option>English</option><option>Hinglish</option></select></div><button id="makeSeo">Generate SEO draft</button></div>
+ <div class="card span6"><h3>SEO package</h3><textarea id="seoOutput" placeholder="Title, description, tags and hashtags will appear here..."></textarea><div class="actions"><button class="secondary" onclick="copyText('seoOutput')">Copy all</button><button class="secondary" onclick="downloadText('seoOutput','youtube-seo.txt')">Download</button></div></div></div>
+</section>
+
+<section id="projects" class="page hidden"><div class="card"><div class="row"><div><h3>My Projects</h3><p class="muted">Projects are stored locally in this browser on this device.</p></div><button onclick="saveCurrent()">Save current work</button></div><div id="projectList"></div></div></section>
+<div class="footer">CreatorStudio AI · Free starter project · Your drafts are stored on this device only. Export backups regularly.</div>
+</main></div><div class="toast" id="toast"></div>
+<script>
+const pages={home:["Dashboard","Plan, write and organize your next video."],script:["AI Script Writer","Create a structured first-draft script."],scenes:["Scene Generator","Turn narration into a visual storyboard."],voice:["Voiceover Studio","Prepare clean narration text."],thumbnail:["Thumbnail Studio","Develop a clear thumbnail concept."],seo:["YouTube SEO","Prepare titles, descriptions and tags."],projects:["My Projects","Manage your saved video projects."]};
+function showPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.add('hidden'));document.getElementById(p).classList.remove('hidden');document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));document.getElementById('pageTitle').textContent=pages[p][0];document.getElementById('pageSub').textContent=pages[p][1];if(p==='projects')renderProjects();window.scrollTo(0,0)}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+function toast(s){let t=document.getElementById('toast');t.textContent=s;t.style.display='block';setTimeout(()=>t.style.display='none',2200)}
+function val(id){return document.getElementById(id).value.trim()}
+function copyText(id){let v=document.getElementById(id).value;if(!v)return toast('Nothing to copy');navigator.clipboard?.writeText(v).then(()=>toast('Copied')).catch(()=>toast('Copy not available — select the text'))}
+function downloadText(id,name){let v=document.getElementById(id).value;if(!v)return toast('Nothing to download');let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v],{type:'text/plain'}));a.download=name;a.click();URL.revokeObjectURL(a.href)}
+function scriptDraft(){let topic=val('topic');if(!topic)return toast('Please enter a topic');let lang=val('scriptLang'),fmt=val('format'),dur=val('duration'),tone=val('tone'),points=val('keypoints');let hi=lang!=='English';let lines=hi?[
+`[HOOK — शुरुआत]`,`क्या आपने कभी सोचा है कि ${topic} के पीछे की असली कहानी क्या है? आज हम इसे आसान भाषा में समझेंगे।`,
+`[INTRODUCTION]`,`नमस्कार दोस्तों! इस वीडियो में हम ${topic} की कहानी, इसके जरूरी पहलुओं और इससे मिलने वाली सीख को जानेंगे।`,
+`[MAIN STORY]`,`सबसे पहले इसकी पृष्ठभूमि समझते हैं। किसी भी विषय को सही तरह समझने के लिए यह जानना जरूरी है कि इसकी शुरुआत कैसे हुई और इसके पीछे कौन-से कारण थे।`,
+`[IMPORTANT DETAILS]`,`अब बात करते हैं उन मुख्य बातों की जो इस विषय को खास बनाती हैं। ${points||'यहाँ अपने रिसर्च से मिले सही तथ्य, उदाहरण और जरूरी तारीखें जोड़ें।'}`,
+`[CONTEXT & EXPLANATION]`,`इन बातों को एक उदाहरण से समझा जा सकता है। दर्शकों को केवल जानकारी देना ही काफी नहीं है; जानकारी का महत्व और उसका असर भी समझाना जरूरी है।`,
+`[CONCLUSION]`,`तो दोस्तों, ${topic} से हमें यह समझने को मिलता है कि सही जानकारी और लगातार प्रयास कितने महत्वपूर्ण हैं।`,
+`[CALL TO ACTION]`,`अगर वीडियो पसंद आया हो तो इसे लाइक करें, चैनल को सब्सक्राइब करें और कमेंट में अपनी राय जरूर बताएं। धन्यवाद!`
+]:[`[HOOK]`,`Have you ever wondered about the real story behind ${topic}? In this video, we break it down clearly.`,
+`[INTRODUCTION]`,`Welcome back! Today we explore ${topic}, its background, key details and why it matters.`,
+`[BACKGROUND]`,`To understand this topic, let's begin with its origins and the context that shaped it.`,
+`[KEY DETAILS]`,`${points||'Add verified facts, examples, dates and useful context from your research here.'}`,
+`[EXPLANATION]`,`The important thing is not just what happened, but why it matters and what we can learn from it.`,
+`[CONCLUSION]`,`That was the story of ${topic}. Use this closing section to reinforce the most important takeaway.`,
+`[CALL TO ACTION]`,`If you found this video useful, like, subscribe and share your thoughts in the comments. Thank you!`];
+document.getElementById('scriptOutput').value=`VIDEO BRIEF\nTopic: ${topic}\nLanguage: ${lang}\nFormat: ${fmt}\nTarget duration: ${dur}\nTone: ${tone}\n\nNOTE: This is a structured starter draft. Verify every factual claim and expand the sections to match your target duration.\n\n`+lines.join('\n\n');}
+document.getElementById('generateScript').onclick=scriptDraft;
+let sceneData=[];
+function makeScenes(){let s=val('sceneInput');if(!s)return toast('Paste a script first');let sentences=s.match(/[^.!?।]+[.!?।]?/g)||[s];let chunks=[];for(let i=0;i<sentences.length;i+=2){let c=sentences.slice(i,i+2).join(' ').trim();if(c)chunks.push(c)}sceneData=chunks.map((c,i)=>({n:i+1,narration:c,prompt:`${val('visualStyle')} shot illustrating: ${c}. Natural realistic details, coherent subject, professional composition, ${val('aspect')}, no text, no watermark.`}));renderScenes();document.getElementById('sceneResults').classList.remove('hidden');}
+function renderScenes(){document.getElementById('sceneList').innerHTML=sceneData.map((x,i)=>`<div class="scene"><div class="scenehead"><b>Scene ${x.n}</b><span class="small">Narration + visual prompt</span></div><div class="field"><label>Narration</label><textarea data-n="${i}" class="narr">${escapeHtml(x.narration)}</textarea></div><div class="field"><label>Visual prompt</label><textarea data-p="${i}" class="pr">${escapeHtml(x.prompt)}</textarea></div></div>`).join('');document.querySelectorAll('.narr').forEach(e=>e.oninput=()=>sceneData[+e.dataset.n].narration=e.value);document.querySelectorAll('.pr').forEach(e=>e.oninput=()=>sceneData[+e.dataset.p].prompt=e.value)}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+document.getElementById('makeScenes').onclick=makeScenes;
+function downloadScenes(){let s=sceneData.map(x=>`SCENE ${x.n}\nNarration: ${x.narration}\nVisual prompt: ${x.prompt}`).join('\n\n');let b=new Blob([s],{type:'text/plain'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='storyboard.txt';a.click();URL.revokeObjectURL(a.href)}
+document.getElementById('cleanVoice').onclick=()=>{let s=val('voiceInput');if(!s)return toast('Paste narration first');let clean=s.replace(/\[.*?\]/g,'').replace(/\s+/g,' ').replace(/([.!?।])\s*/g,'$1\n\n').trim();document.getElementById('voiceOutput').value=`LANGUAGE: ${val('voiceLang')}\nDELIVERY: ${val('delivery')}\n\n${clean}`};
+document.getElementById('makeThumb').onclick=()=>{let t=val('thumbTopic');if(!t)return toast('Enter a topic');let l=val('thumbLang');document.getElementById('thumbOutput').value=`THUMBNAIL CONCEPT\nTopic: ${t}\nMood: ${val('thumbMood')}\n\nSuggested thumbnail text (${l}):\n${l==='English'?'THE UNTOLD STORY':l==='Hindi'?'असली कहानी':'ASLI KAHANI'}\n\nCOMPOSITION:\nOne clear central subject, expressive but natural emotion, strong foreground/background separation, cinematic lighting, uncluttered layout. Keep the main subject on one side and leave clean negative space for 2–4 words of bold text.\n\nIMAGE PROMPT:\nCreate a professional YouTube thumbnail about ${t}, ${val('thumbMood')} mood, realistic documentary photography, dramatic but believable lighting, crisp subject, high contrast, clean composition, 16:9 landscape, no logos, no watermark. Leave space for title text.\n\nTip: Add the final text manually in an image editor for accurate spelling.`};
+document.getElementById('makeSeo').onclick=()=>{let t=val('seoTopic');if(!t)return toast('Enter a topic');let l=val('seoLang'),n=val('niche');document.getElementById('seoOutput').value=`TITLE IDEAS\n1. ${t} | पूरी कहानी\n2. ${t} की सच्चाई जानिए\n3. The Story Behind ${t}\n\nDESCRIPTION\nइस वीडियो में हम ${t} के बारे में आसान भाषा में जानेंगे। वीडियो में दी गई जानकारी को समझें और अपनी राय कमेंट में बताएं।\n\nChannel niche: ${n}\n\nTAGS\n${t}, ${n}, hindi documentary, facts in hindi, educational video, inspirational story, business story\n\nHASHTAGS\n#${slug(t)} #Hindi #Facts #Documentary #Inspiration\n\nSEO NOTE\nChoose one accurate title, add a truthful description, and use only tags relevant to the actual video. Avoid misleading claims.`};
+function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'').slice(0,20)||'video'}
+let currentProject='Untitled video';
+function saveCurrent(){let p={id:Date.now(),name:val('topic')||val('seoTopic')||currentProject,topic:val('topic'),script:val('scriptOutput'),sceneInput:val('sceneInput'),voice:val('voiceOutput'),thumb:val('thumbOutput'),seo:val('seoOutput'),updated:new Date().toLocaleString()};let all=JSON.parse(localStorage.getItem('cs_projects')||'[]');all.unshift(p);localStorage.setItem('cs_projects',JSON.stringify(all.slice(0,50)));currentProject=p.name;updateCounts();toast('Project saved on this device');renderProjects()}
+function loadProject(id){let p=JSON.parse(localStorage.getItem('cs_projects')||'[]').find(x=>x.id===id);if(!p)return;document.getElementById('topic').value=p.topic||'';document.getElementById('scriptOutput').value=p.script||'';document.getElementById('sceneInput').value=p.sceneInput||'';document.getElementById('voiceOutput').value=p.voice||'';document.getElementById('thumbOutput').value=p.thumb||'';document.getElementById('seoOutput').value=p.seo||'';showPage('script');toast('Project loaded')}
+function deleteProject(id){let all=JSON.parse(localStorage.getItem('cs_projects')||'[]').filter(x=>x.id!==id);localStorage.setItem('cs_projects',JSON.stringify(all));renderProjects();updateCounts();toast('Project deleted')}
+function renderProjects(){let all=JSON.parse(localStorage.getItem('cs_projects')||'[]');let html=all.map(p=>`<div class="project"><div><b>${escapeHtml(p.name)}</b><div class="small">${escapeHtml(p.updated||'')}</div></div><div class="actions"><button class="secondary" onclick="loadProject(${p.id})">Open</button><button class="danger" onclick="deleteProject(${p.id})">Delete</button></div></div>`).join('');document.getElementById('projectList').innerHTML=html||'<p class="muted">No saved projects yet.</p>';document.getElementById('recentProjects').innerHTML=all.slice(0,3).map(p=>`<div class="project"><b>${escapeHtml(p.name)}</b><span class="small">${escapeHtml(p.updated||'')}</span></div>`).join('')||'No projects yet. Click “New project” to begin.'}
+function updateCounts(){let n=JSON.parse(localStorage.getItem('cs_projects')||'[]').length;document.getElementById('projectCount').textContent=n;renderProjects()}
+document.getElementById('newProject').onclick=()=>{['topic','keypoints','scriptOutput','sceneInput','voiceInput','voiceOutput','thumbTopic','thumbOutput','seoTopic','seoOutput'].forEach(id=>document.getElementById(id).value='');showPage('script');toast('New blank project ready')};
+updateCounts();
+if('serviceWorker' in navigator && location.protocol!=='file:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
+</script></body></html>
